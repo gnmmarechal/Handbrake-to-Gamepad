@@ -23,6 +23,7 @@
     <PackageReference Include="Figgle" Version="0.5.1" />
     <PackageReference Include="H.InputSimulator" Version="1.5.0" />
     <PackageReference Include="Nefarius.ViGEm.Client" Version="1.21.256" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Pastel" Version="6.0.1" />
     <PackageReference Include="SharpDX.DirectInput" Version="4.2.0" />
   </ItemGroup>

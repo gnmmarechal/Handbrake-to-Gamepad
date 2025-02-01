@@ -9,7 +9,7 @@ using System.Diagnostics;
 using Handbrake_to_Keyboard;
 using Figgle;
 using Pastel;
-using System.Text.Json;
+using Newtonsoft.Json;
 
 // Settings
 string settingsPath = "settings.json";
@@ -26,7 +26,7 @@ AppSettings settings = new()
 
 if (File.Exists(settingsPath))
 {
-    var readSettings = JsonSerializer.Deserialize<AppSettings>(File.ReadAllText(settingsPath));
+    var readSettings = JsonConvert.DeserializeObject<AppSettings>(File.ReadAllText(settingsPath));
     if (readSettings is not null)
     {
         settings = readSettings;
@@ -39,7 +39,7 @@ if (File.Exists(settingsPath))
 }
 else
 {
-    File.WriteAllText(settingsPath, JsonSerializer.Serialize(settings, new JsonSerializerOptions { WriteIndented = true }));
+    File.WriteAllText(settingsPath, JsonConvert.SerializeObject(settings, Formatting.Indented));
 }
 
 

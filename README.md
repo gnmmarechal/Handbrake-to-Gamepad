@@ -48,3 +48,7 @@ The default values reflect my own usage scenario, mapping my handbrake's input b
 ## Dependencies
 
 - [ViGEmBus driver](https://github.com/nefarius/ViGEmBus/releases)
+
+## Issues
+
+- Forza Horizon 4 doesn't seem to support multiple controllers properly, it'll switch between them whenever there's an input. This means that, for example, when holding the handbrake, the wheel input will be disregarded until you submit a wheel input again. I'm unsure whether this is solvable without emulating the whole wheel and binding the handbrake to one of the buttons of the emulated wheel instead.

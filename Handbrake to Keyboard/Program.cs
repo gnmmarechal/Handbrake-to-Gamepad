@@ -10,6 +10,7 @@ using Handbrake_to_Keyboard;
 using Figgle;
 using Pastel;
 using Newtonsoft.Json;
+using System.Reflection;
 
 // Settings
 string settingsPath = "settings.json";
@@ -50,7 +51,20 @@ var directInput = new DirectInput();
 var vigemClient = new ViGEmClient();
 IXbox360Controller x360 = null;
 
-var versionInfo = FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location);
+(string ProductName, string ProductVersion, string CompanyName) versionInfo = ("?", "?", "?");
+if (IsSingleFile())
+{
+    var version =
+        System.Diagnostics.FileVersionInfo.GetVersionInfo(
+            System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName
+        );
+    versionInfo = (version.ProductName, version.ProductVersion, version.CompanyName); // TO-DO: Null checks
+}
+else
+{
+    var verInfo = FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location);
+    versionInfo = (verInfo.ProductName, verInfo.ProductVersion, verInfo.CompanyName); // TO-DO: Null checks
+}
 
 Console.WriteLine(FiggleFonts.ThreePoint.Render($"{versionInfo.ProductName}").Pastel(ConsoleColor.Blue));
 Console.WriteLine($"v.{versionInfo.ProductVersion} by {versionInfo.CompanyName}");
@@ -184,7 +198,10 @@ if (x360 is not null)
     x360.Disconnect();
 }
 
-
+static bool IsSingleFile()
+{
+    return !string.IsNullOrEmpty(AppContext.BaseDirectory) && !File.Exists(Assembly.GetExecutingAssembly().Location);
+}
 
 static class HandbrakeManager
 {

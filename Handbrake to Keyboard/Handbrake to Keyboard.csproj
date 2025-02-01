@@ -9,15 +9,9 @@
     <AssemblyName>Handbrake to Gamepad</AssemblyName>
     <Company>gnmmarechal</Company>
     <PackageProjectUrl>https://gs2012.xyz</PackageProjectUrl>
-    <PackageIcon>handbrake.png</PackageIcon>
-  </PropertyGroup>
+	<ApplicationIcon>handbrake.ico</ApplicationIcon>
 
-  <ItemGroup>
-    <None Include="..\..\..\..\..\..\Repos\Handbrake to Keyboard\Handbrake to Keyboard\handbrake.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
+  </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Figgle" Version="0.5.1" />

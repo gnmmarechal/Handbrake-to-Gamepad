@@ -1,7 +1,10 @@
 # Handbrake to Gamepad
 
-- Explain what it is and why
+This is a utility that maps a handbrake's input to a keyboard key or an Xbox 360 controller button. It uses the SharpDX library to interface with DirectInput devices and the ViGEmClient library to emulate an Xbox 360 controller.
 
+## Why?
+
+Games like Forza Horizon 4 refuse to recognise my ATTiny85-based handbrake as an input device. This is a workaround for that.
 
 ## Settings File Format
 
@@ -33,6 +36,6 @@ The settings file must be in the same directory as the program's executable and 
 - **SimKey** : The keyboard button to simulate if in keyboard mode - refer to [this](https://gitlab.com/SchwingSK/Keyboard2Xinput/-/blob/master/virtualKeyNames.md) page to find it.
 - **SimButton** : The Xbox 360 button to simulate if in controller mode - refer to vigemKeys.md to find your desired output.
 
-### To Do
+## To Do
 - Add a configuration utility to make it easier to set up the settings file.
 - Support axis mapping for progressive handbrakes.

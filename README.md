@@ -39,3 +39,10 @@ The settings file must be in the same directory as the program's executable and 
 ## To Do
 - Add a configuration utility to make it easier to set up the settings file.
 - Support axis mapping for progressive handbrakes.
+
+## Releases
+
+- Download it here: [v.1.0](https://dl.gs2012.xyz/?id=73)
+## Dependencies
+
+- [ViGEmBus driver](https://github.com/nefarius/ViGEmBus/releases)

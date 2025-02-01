@@ -8,7 +8,9 @@ Games like Forza Horizon 4 refuse to recognise my ATTiny85-based handbrake as an
 
 ## Settings File Format
 
-The settings file must be in the same directory as the program's executable and be named "settings.json". As the name would imply, it is a JSON-formatted file.
+The settings file must be in the same directory as the program's executable and be named "settings.json". As the name would imply, it is a JSON-formatted file. If no file is found, the program will create one with default values as described below.
+
+The default values reflect my own usage scenario, mapping my handbrake's input button to the A button on an Xbox 360 controller.
 
 ### Example settings file
 
